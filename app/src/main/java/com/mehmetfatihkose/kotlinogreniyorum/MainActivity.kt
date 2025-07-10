@@ -16,24 +16,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        println("merhaba dünya")
-        println("merhaba dünya")
-       // kotlin'de veri tipleri ve değişkenler
-
-        // var sabit değişken tutamat değiştirile billir
-        var x = 5
-        println(x)
-
-        x=25
-        var y = 30
-        println(x+y)
-
-        //val sabit değer tutar değiştirilemez
-//        val z = 50
-//        z = 60      olursa ('val' cannot be reassigned.) hatası alınır doğrusu
-        val z =50
-        println(z)
-        println(z+y) // z farkılı değer tamadığın sürece çalışır
     }
 }
