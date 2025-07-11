@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#F9FAFB</color>
+    <color name="background">#111827</color>
     <color name="button">#2563EB</color>
     <color name="button_pressed">#1E40AF</color>
-    <color name="text">#111827</color>
+    <color name="text">#F9FAFB</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="wave">#E0E7EF</color>
-</resources>
+    <color name="wave">#1E293B</color>
+</resources> 
