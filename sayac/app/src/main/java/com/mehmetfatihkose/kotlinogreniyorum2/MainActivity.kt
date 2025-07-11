@@ -14,6 +14,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnIncrement: Button
     private lateinit var btnDecrement: Button
     private lateinit var btnReset: Button
+    private lateinit var btnAuto: Button
+    private var isAutoRunning = false
+    private val handler = android.os.Handler()
+    private val autoRunnable = object : Runnable {
+        override fun run() {
+            counter++
+            updateCounterDisplay()
+            handler.postDelayed(this, 1000)
+        }
+    }
     
     private var counter = 0
     
@@ -44,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         btnIncrement = findViewById(R.id.btnIncrement)
         btnDecrement = findViewById(R.id.btnDecrement)
         btnReset = findViewById(R.id.btnReset)
+        btnAuto = findViewById(R.id.btnAuto)
     }
     
     private fun setupClickListeners() {
@@ -61,9 +72,34 @@ class MainActivity : AppCompatActivity() {
             counter = 0
             updateCounterDisplay()
         }
+
+        btnAuto.setOnClickListener {
+            if (isAutoRunning) {
+                stopAutoCounter()
+            } else {
+                startAutoCounter()
+            }
+        }
     }
     
     private fun updateCounterDisplay() {
         tvCounter.text = counter.toString()
+    }
+
+    private fun startAutoCounter() {
+        isAutoRunning = true
+        btnAuto.text = "Durdur"
+        handler.post(autoRunnable)
+    }
+
+    private fun stopAutoCounter() {
+        isAutoRunning = false
+        btnAuto.text = "Başlat"
+        handler.removeCallbacks(autoRunnable)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(autoRunnable)
     }
 }
