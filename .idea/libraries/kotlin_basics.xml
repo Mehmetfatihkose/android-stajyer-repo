@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="kotlin-basics">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/kotlin-basics/Calculator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/kotlin-basics/PersonData.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
